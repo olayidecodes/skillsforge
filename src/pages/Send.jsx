@@ -18,13 +18,13 @@ const Send = () => {
   };
 
   return (
-    <div>
-      <h2>Send Money</h2>
-      <div className="amount-input">
+    <div className='app__send section__padding'>
+      <h2 className='section__title'>Send Money</h2>
+      <div className="amount_input">
         <input type="text" value={amount} readOnly />
         <button onClick={handleClearClick}>Clear</button>
       </div>
-      <div className="number-tabs">
+      <div className="number_tabs">
         <button onClick={() => handleNumberClick('1')}>1</button>
         <button onClick={() => handleNumberClick('2')}>2</button>
         <button onClick={() => handleNumberClick('3')}>3</button>
@@ -36,7 +36,7 @@ const Send = () => {
         <button onClick={() => handleNumberClick('9')}>9</button>
         <button onClick={() => handleNumberClick('0')}>0</button>
       </div>
-      <button onClick={handleSendMoney}>Send Money</button>
+      <button className='send_button' onClick={handleSendMoney}>Send Money</button>
     </div>
   );
 };

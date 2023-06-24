@@ -4,7 +4,7 @@ import {
   Route,
   Outlet
 } from "react-router-dom";
-import { Home, Register, Login, Update, Delete, Send, Receive, ViewTransactions } from "./pages";
+import { Home, Register, Login, Update, Delete, Send, Receive, ViewTransactions, UserAccount } from "./pages";
 import { Footer, Navbar } from "./containers";
 
 import './App.scss'
@@ -29,8 +29,12 @@ const router = createBrowserRouter([
       element: <Home />
       },
       {
-        path: "/delete-account",
+        path: "/delete",
         element: <Delete />
+      },
+      {
+        path: "/update",
+        element: <Update />
       },
       {
         path: "/send",
@@ -41,8 +45,16 @@ const router = createBrowserRouter([
         element: <Receive />
       },
       {
+        path: "/update",
+        element: <Update />
+      },
+      {
         path: "/view-transactions",
         element: <ViewTransactions />
+      },
+      {
+        path: "/user",
+        element: <UserAccount />
       },
     ]
   },
@@ -73,7 +85,11 @@ const router = createBrowserRouter([
   {
     path: "/view-transactions",
     element: <ViewTransactions />,
-  }
+  },
+  {
+    path: "/user",
+    element: <UserAccount />
+  },
 ]);
 
 function App() {

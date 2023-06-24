@@ -21,10 +21,10 @@ const ReceiveMoneyPage = () => {
   };
 
   return (
-    <div>
-      <h2>Receive Money</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className='app__receive section__padding'>
+      <h2 className='section__title'>Receive Money</h2>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className='boxes'>
           <label htmlFor="amount">Amount:</label>
           <input
             type="number"
@@ -34,7 +34,7 @@ const ReceiveMoneyPage = () => {
             required
           />
         </div>
-        <div>
+        <div className='boxes'>
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"

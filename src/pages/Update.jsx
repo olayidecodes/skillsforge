@@ -17,8 +17,8 @@ const Update = () => {
   };
 
   return (
-    <div>
-      <h2>Update Account</h2>
+    <div className='app__update section__padding'>
+      <h2 className='section__title'>Update Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="firstName">First Name:</label>

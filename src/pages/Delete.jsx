@@ -6,12 +6,16 @@ const Delete = () => {
   const handleConfirmDelete = () => {
     // I can make an API call to your backend server to delete the user account
     console.log('Deleting user account...');
+    window.location.reload()
+    window.postMessage("Account Deleted")
   };
 
   return (
-    <div>
-      <h1>Delete User Account</h1>
-      <p>
+    <div className='app__delete section__padding'>
+    <div className="text">
+
+      <h1 className='section__title'>Delete User Account</h1>
+      <p className='section__subtitle'>
         Are you sure you want to delete your account? This action is irreversible and all your data will be lost.
       </p>
       {!confirmDelete ? (
@@ -19,10 +23,11 @@ const Delete = () => {
       ) : (
         <div>
           <p>Are you REALLY sure? This action cannot be undone!</p>
-          <button onClick={handleConfirmDelete}>Yes, Delete</button>
+          <button onClick={handleConfirmDelete}>Yes, Delete</button><br />
           <button onClick={() => setConfirmDelete(false)}>Cancel</button>
         </div>
       )}
+    </div>
     </div>
   );
 };

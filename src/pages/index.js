@@ -6,6 +6,7 @@ import Receive from './Receive';
 import ViewTransactions from './ViewTransactions';
 import Home from './Home';
 import Login from "./Login";
+import UserAccount from "./UserAccount";
 
 export {
     Home,
@@ -15,5 +16,6 @@ export {
     Send,
     Receive,
     ViewTransactions,
-    Login
+    Login,
+    UserAccount
 }

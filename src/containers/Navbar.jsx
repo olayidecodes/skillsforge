@@ -19,6 +19,7 @@ const Navbar = () => {
       </ul>
       <div className="app__navbar-auth">
         <button><Link to='/register'>Register</Link></button>
+        <button><Link to='/login'>Login</Link></button>
       </div>
 
       <div className="app__navbar-smallscreen">
@@ -27,11 +28,15 @@ const Navbar = () => {
         {toggleMenu && (
           <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
             <ul className="app__navbar-smallscreen-links">
-                <li className="p__opensans"><a href = "#team">Team</a></li>
-                <li className="p__opensans"><a href = "#">FAQ</a></li>
-                <li className="p__opensans"><a href = "#downloads">Downloads</a></li>
-                <li className="p__opensans"><a href = "#">Blog</a></li>
-                <li className="p__opensans"><a href = "#contact">Contact Us</a></li>
+            <ul className="app__navbar-links">
+        <li><Link to='/send'>Send</Link></li>
+        <li><Link to="/receive">Receive</Link></li>
+        <li><Link to='/view-transactions'>View Transactions</Link></li>
+      </ul>
+      <div className="app__navbar-auth">
+        <button><Link to='/register'>Register</Link></button>
+        <button><Link to='/login'>Login</Link></button>
+      </div>
             </ul>
             <div  className='overlay_socials'>
                 
