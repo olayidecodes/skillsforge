@@ -15,6 +15,8 @@ const Send = () => {
     // Logic for sending money
     // You can use the `amount` state variable here
     // Example: sendMoney(amount);
+    window.location.reload()
+    window.postMessage("Money Sent")
   };
 
   return (

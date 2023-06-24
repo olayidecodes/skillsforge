@@ -14,11 +14,16 @@ const ReceiveMoneyPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform the necessary logic to receive money, e.g., make an API call
+    // Perform the necessary logic to receive money
     // Reset the form fields
     setAmount('');
     setDescription('');
   };
+
+  const submitRequest = (e) => {
+    window.location.reload()
+    window.postMessage("Request is being processed")
+  }
 
   return (
     <div className='app__receive section__padding'>
@@ -43,7 +48,7 @@ const ReceiveMoneyPage = () => {
             required
           />
         </div>
-        <button type="submit">Receive</button>
+        <button onClick={submitRequest} type="submit">Receive</button>
       </form>
     </div>
   );

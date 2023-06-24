@@ -686,35 +686,36 @@ form {
 
 // User Account
 
-.user-account {
+.user_account {
   margin: 20px;
   padding: 20px;
+  padding-top: 4rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f8f8f8;
 }
 
-.user-account h1 {
+.user_account h1 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.account-menu {
+.account_menu {
   margin-bottom: 20px;
 }
 
-.account-menu ul {
+.account_menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.account-menu ul li {
+.account_menu ul li {
   display: inline-block;
   margin-right: 10px;
 }
 
-.account-menu ul li a {
+.account_menu ul li a {
   text-decoration: none;
   color: #333;
   padding: 5px 10px;
@@ -723,11 +724,11 @@ form {
   transition: background-color 0.3s;
 }
 
-.account-menu ul li a:hover {
+.account_menu ul li a:hover {
   background-color: #ccc;
 }
 
-.account-content {
+.account_content {
   display: none;
 }
 
@@ -752,3 +753,5 @@ form {
       display: block;
   }
 }
+
+

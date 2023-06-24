@@ -1,6 +1,6 @@
 import React from 'react'
 import {BsTwitter, BsInstagram, BsDiscord} from 'react-icons/bs'
-
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='app__footer section__padding'>
@@ -16,14 +16,14 @@ const Footer = () => {
       </div>
       <div className="right">
         <div className="box1">
-          <p>Sign In</p>
-          <p>Update Account</p>
-          <p>Delete Account</p>
+          <p><Link to="/login">Sign In</Link></p>
+          <p><Link to="/update">Update Account</Link></p>
+          <p><Link to="/delete">Delete Account</Link></p>
         </div>
         <div className="box2">
-          <p>Send Money</p>
-          <p>Receive Money</p>
-          <p>View Transactions</p>
+          <p><Link to="/send">Send Money</Link></p>
+          <p><Link to="/receive">Receive Money</Link></p>
+          <p><Link to="/view-transactions">View Transactions</Link></p>
         </div>
         <div className="box3">
           <p>UI 2nd Gate</p>
