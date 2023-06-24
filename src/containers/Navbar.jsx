@@ -10,7 +10,7 @@ const Navbar = () => {
 
     <nav className='app__navbar section__padding'>
       <div className="app__navbar-logo">
-        <Link to='/'>SkillsForge</Link>
+        <Link to='/'><h1>SkillsForge</h1></Link>
       </div>
       <ul className="app__navbar-links">
         <li><Link to='/send'>Send</Link></li>

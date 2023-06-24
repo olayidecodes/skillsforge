@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 
 :root {
   --font-base: 'Montserrat', sans-serif;
   --font-block: 'Julius Sans One', sans-serif;
+  --font-logo: 'Megrim', cursive;
 
   --black: #101010;
   --green: #72E485;
   --yellow: #F9D658;
   --light-gray: #F8F8F8;
-  --dark-gary: #EEEDF0;
+  --dark-gray: #777777;
   --white: #FFFFFF;
 }
 
@@ -32,6 +34,13 @@ a {
 .section__padding {
   padding-left: 7%;
   padding-right: 7%;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .flex__center {
@@ -39,27 +48,77 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+// Details Card
+
+.detail__card {
+  width: 15rem;
+  padding: 1rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  border-radius: 17px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.8px);
+  transition: 0.5s;
+
+  &:hover {
+    background-color: var(--green);
+  }
+  img {
+    width: 4rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  p {
+    color: var(--dark-gray);
+    font-weight: 600;
+  }
+}
+
 // NAVBAR
 
 .app__navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: absolute;
   top: 0;
-  left: 0;
   z-index: 2000;
+  width: 100%;
   color: white;
   padding: 1rem 5%;
-  font-family: var(--font-block);
 
   .app__navbar-logo {
     color: var(--white);
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.2rem;
+
+    h1 {
+      font-family: var(--font-logo);
+    }
   }
 
   .app__navbar-links {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
+    list-style: none;
+
+    :hover {
+      color: var(--dark-gray);
+    }
+  }
+
+  .app__navbar-auth {
+    button {
+      background-color: var(--green);
+      color: var(--black);
+      padding: .7rem 1.1rem;
+      border: none;
+      border-radius: 10px;
+    }
   }
 
   .app__navbar-smallscreen{
@@ -111,6 +170,37 @@ a {
 }
 
 
+// Footer
+
+.app__footer {
+  display: flex;
+  background-color: var(--black);
+  color: var(--light-gray);
+  justify-content: space-between;
+
+  .left {
+    .logo {
+      h1 {
+        font-family: var(--font-logo);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+    .links {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
+  }
+
+  .right {
+    display: flex;
+    gap: 1.2rem;
+    font-size: .8rem;
+  }
+}
+
+
 // Home
 .home {
   .app__hero {
@@ -118,25 +208,22 @@ a {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     min-height: 100vh;
-    z-index: -1;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
     color: var(--white);
     display: flex;
     align-items: center;
+    padding: 5rem 5% 2rem;
+    gap: 2rem;
+
+    .hero__part {
+      flex: 50%;
+    }
     .hero__left {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
       h1 {
-        -webkit-text-size-adjust: 100%;
-        --width1: -200%;
-        --width2: -200%;
-        --time: 50s;
-        --time_mirror: 50s;
-        color: #fff;
-        font-family: Arial,Helvetica\ Neue,Helvetica,sans-serif;
-        line-height: 1.3em;
-        font-size: 1.7742vw;
+        font-size: 4rem;
+        font-family: var(--font-block);
         -webkit-font-smoothing: antialiased;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         cursor: url("chrome-extension://jlgkpaicikihijadgifklkbpdajbkhjo/image/cursors/001@3.png"), default;
@@ -145,20 +232,286 @@ a {
         transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
         transform-style: preserve-3d;
       }
+      .hero__store {
+        display: flex;
+        gap: 1rem;
+        .store_icon {
+          width: 10rem;
+          height: 3rem;
+        }
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        p {
+          letter-spacing: .7px;
+          span {
+            color: var(--green);
+          }
+        }
+        .stars {
+          width: 6rem;
+        }
+      }
     }
 
     .hero__right {
+      display: flex;
+      justify-content: center;
+      position: relative;
       .phone {
         width: 16rem;
       }
 
       .amazon {
         width: 13rem;
+        position: absolute;
+        left: 10%;
+        bottom: 40%;
       }
 
       .mcd {
         width: 13rem;
+        position: absolute;
+        right: 20%;
+        bottom: 15%;
       }
     }
   }
 }
+
+// Transactions
+
+.app__transactions {
+  background-image: url('./assets/bg2.jpg');
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  .section__subtitle {
+    max-width: 40rem;
+    text-align: center;
+  }
+
+  .transaction__cards {
+    display: flex;
+    gap: 2rem;
+  }
+} 
+
+// Interets 
+.app__interest {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  .half {
+    flex: 50%;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: .5rem 1rem;
+      width: fit-content;
+      background-color: var(--green);
+      color: var(--black);
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+  }
+}
+
+
+// Advert
+
+.app__advert {
+  background-color: var(--green);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero__store {
+    display: flex;
+    gap: 1rem;
+    .store_icon {
+      width: 10rem;
+      height: 3rem;
+    }
+  }
+}
+
+// Sign Up and Register
+
+
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--black);
+  h1 {
+      font-size: 20px;
+      color: var(--green);
+      margin-bottom: 20px;
+  }
+  form {
+      display: flex;
+      flex-direction: column;
+      padding: 50px;
+      background: rgba(219, 219, 219, 0.1);
+      border-radius: 17px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(2.8px);
+      -webkit-backdrop-filter: blur(2.8px);
+      width: 20rem;
+      gap: 20px;
+      input {
+          padding: 10px;
+          border: none;
+          border-bottom: 1px solid gray;
+      }
+      button {
+          padding: 10px;
+          border: none;
+          background-color: var(--green);
+          cursor: pointer;
+          color: var(--black);
+      }
+      p {
+          font-size: 12px;
+          color: red;
+          text-align: center;
+      }
+      span {
+          font-size: 12px;
+          text-align: center;
+          color: var(--light-gray);
+      }
+  }
+}
+
+
+.view__transactions {
+  padding-top: 5rem;
+  background-color: var(--black);
+  color: var(--light-gray);
+
+  .chart {
+    padding-bottom: 2rem;
+  }
+
+  .expenses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+
+    .one {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .text {
+        p {
+          font-size: .5rem;
+        }
+      }
+    }
+  }
+
+  .transactions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .expense__card {
+      padding: .5rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 14px;
+      box-shadow: 0 2px 7px var(--green);
+      backdrop-filter: blur(2px);
+
+      .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        .icon {
+          
+        }
+        .text {
+          h1 {
+            font-size: 1.2rem;
+            font-family: var(--font-block);
+          }
+          p {
+            font-size: .7rem;
+          }
+        }
+      }
+
+      .right {
+        text-align: right;
+        h2 {
+          font-size: 1.1rem;
+        }
+        p {
+          font-size: .6rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

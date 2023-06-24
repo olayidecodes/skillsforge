@@ -4,11 +4,10 @@ import {
   Route,
   Outlet
 } from "react-router-dom";
-import { Home, Register, Update, Delete, Send, Receive, ViewTransactions } from "./pages";
-import { Navbar } from './components';
-import Footer from './components/Footer';
-import './App.scss'
+import { Home, Register, Login, Update, Delete, Send, Receive, ViewTransactions } from "./pages";
+import { Footer, Navbar } from "./containers";
 
+import './App.scss'
 
 const Layout = () => {
   return (
@@ -54,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/delete",
