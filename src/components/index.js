@@ -1,7 +1,7 @@
-import Navbar from "./Navbar";
-import Footer from './Footer';
+import DetailCard from "./DetailCard";
+import ExpenseCard from './ExpenseCard';
 
 export {
-    Footer,
-    Navbar,
+    DetailCard,
+    ExpenseCard
 }
