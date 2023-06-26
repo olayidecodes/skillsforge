@@ -52,10 +52,6 @@ const router = createBrowserRouter([
         path: "/view-transactions",
         element: <ViewTransactions />
       },
-      {
-        path: "/user",
-        element: <UserAccount />
-      },
     ]
   },
   {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Send = () => {
   const [amount, setAmount] = useState('');
@@ -11,12 +12,11 @@ const Send = () => {
     setAmount('');
   };
 
+  const navigate = useNavigate()
+
   const handleSendMoney = () => {
-    // Logic for sending money
-    // You can use the `amount` state variable here
-    // Example: sendMoney(amount);
-    window.location.reload()
-    window.postMessage("Money Sent")
+    alert("Money Sent")
+    navigate("/")
   };
 
   return (

@@ -16,6 +16,7 @@ const Footer = () => {
       </div>
       <div className="right">
         <div className="box1">
+          <p><Link to="/user">Your account</Link></p>
           <p><Link to="/login">Sign In</Link></p>
           <p><Link to="/update">Update Account</Link></p>
           <p><Link to="/delete">Delete Account</Link></p>

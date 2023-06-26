@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const ReceiveMoneyPage = () => {
   const [amount, setAmount] = useState('');
@@ -14,15 +15,15 @@ const ReceiveMoneyPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform the necessary logic to receive money
-    // Reset the form fields
     setAmount('');
     setDescription('');
   };
 
+  const navigate = useNavigate()
+
   const submitRequest = (e) => {
-    window.location.reload()
-    window.postMessage("Request is being processed")
+    alert("Request is being processed")
+    navigate("/")
   }
 
   return (

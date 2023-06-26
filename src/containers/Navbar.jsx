@@ -15,7 +15,7 @@ const Navbar = () => {
       <ul className="app__navbar-links">
         <li><Link to='/send'>Send</Link></li>
         <li><Link to="/receive">Receive</Link></li>
-        <li><Link to='/view-transactions'>View Transactions</Link></li>
+        <li><Link to='/user'>Account</Link></li>
       </ul>
       <div className="app__navbar-auth">
         <button><Link to='/register'>Register</Link></button>
@@ -31,7 +31,7 @@ const Navbar = () => {
             <ul className="app__navbar-smallscreen-links">
                 <li><Link to='/send'>Send</Link></li>
                 <li><Link to="/receive">Receive</Link></li>
-                <li><Link to='/view-transactions'>View Transactions</Link></li>
+                <li><Link to='/user'>Account</Link></li>
             </ul>
             <div className="overlay_auth">
                 <button><Link to='/register'>Register</Link></button>

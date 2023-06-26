@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Delete = () => {
   const [confirmDelete, setConfirmDelete] = useState(false);
-
+  const navigate = useNavigate()
   const handleConfirmDelete = () => {
     // I can make an API call to your backend server to delete the user account
     console.log('Deleting user account...');
-    window.location.reload()
-    window.postMessage("Account Deleted")
+    alert("Account Deleted")
+    navigate("/")
   };
 
   return (
