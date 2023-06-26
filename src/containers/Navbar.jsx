@@ -25,22 +25,18 @@ const Navbar = () => {
       <div className="app__navbar-smallscreen">
         <RiMenu4Line fontSize={27} className='overlay__open' onClick={() => setToggleMenu(!toggleMenu)} />
 
+
         {toggleMenu && (
-          <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
+          <div className="app__navbar-smallscreen_overlay slide-bottom">
             <ul className="app__navbar-smallscreen-links">
-            <ul className="app__navbar-links">
-        <li><Link to='/send'>Send</Link></li>
-        <li><Link to="/receive">Receive</Link></li>
-        <li><Link to='/view-transactions'>View Transactions</Link></li>
-      </ul>
-      <div className="app__navbar-auth">
-        <button><Link to='/register'>Register</Link></button>
-        <button><Link to='/login'>Login</Link></button>
-      </div>
+                <li><Link to='/send'>Send</Link></li>
+                <li><Link to="/receive">Receive</Link></li>
+                <li><Link to='/view-transactions'>View Transactions</Link></li>
             </ul>
-            <div  className='overlay_socials'>
-                
-            </div>
+            <div className="overlay_auth">
+                <button><Link to='/register'>Register</Link></button>
+                <button><Link to='/login'>Login</Link></button>
+              </div>
           </div>
         )}
         

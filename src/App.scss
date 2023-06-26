@@ -127,7 +127,7 @@ a {
     display: none;
     @media screen and (max-width: 1000px) {
         display: block;
-    }
+    
 
     .app__navbar-smallscreen_overlay{
         position: fixed;
@@ -135,7 +135,10 @@ a {
         left: 0;
         width: 100%;
         height: 50vh;
-        background: var(--color-black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
         transition: 0.5s ease;
         flex-direction: column;
         z-index: 5;
@@ -165,9 +168,21 @@ a {
         color: var(--color-white);
     }
 
-    .overlay_socials{
+    .overlay_auth{
         margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        button {
+          background-color: var(--green);
+          color: var(--black);
+          padding: .7rem 1.1rem;
+          border: none;
+          border-radius: 10px;
+        }
     }
+  }
 }
 }
 
@@ -179,6 +194,8 @@ a {
   background-color: var(--black);
   color: var(--light-gray);
   justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 
   .left {
     .logo {
@@ -199,6 +216,7 @@ a {
     display: flex;
     gap: 1.2rem;
     font-size: .8rem;
+    flex-wrap: wrap;
   }
 }
 
@@ -216,6 +234,12 @@ a {
     padding: 5rem 5% 2rem;
     gap: 2rem;
 
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      padding-top: 8rem;
+      gap: 3.5rem;
+    }
+
     .hero__part {
       flex: 50%;
     }
@@ -224,7 +248,7 @@ a {
       flex-direction: column;
       gap: 2rem;
       h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         font-family: var(--font-block);
         -webkit-font-smoothing: antialiased;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -233,6 +257,10 @@ a {
         opacity: 1;
         transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
         transform-style: preserve-3d;
+
+        @media screen and (max-width: 700px) {
+          font-size: 2.5rem;
+        }
       }
       .hero__store {
         display: flex;
@@ -240,6 +268,11 @@ a {
         .store_icon {
           width: 10rem;
           height: 3rem;
+
+          @media screen and (max-width: 400px) {
+            width: 6rem;
+            height: 2rem;
+          }
         }
       }
 
@@ -264,7 +297,13 @@ a {
       justify-content: center;
       position: relative;
       .phone {
-        width: 16rem;
+        width: 20rem;
+        @media screen and (max-width: 700px) {
+          width: 20rem;
+        }
+        @media screen and (max-width: 400px) {
+          width: 70%;
+        }
       }
 
       .amazon {
@@ -284,6 +323,10 @@ a {
   }
 }
 
+// @media screen and (max-width: 1000px) {
+//   display: block;
+// }
+
 // Transactions
 
 .app__transactions {
@@ -294,7 +337,11 @@ a {
   align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
+
+  .section__title {
+    text-align: center;
+  }
 
   .section__subtitle {
     max-width: 40rem;
@@ -304,10 +351,13 @@ a {
   .transaction__cards {
     display: flex;
     gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 } 
 
-// Interets 
+// Interests 
 .app__interest {
   display: flex;
   gap: 3rem;
@@ -316,6 +366,12 @@ a {
 
   .half {
     flex: 50%;
+  }
+
+  .left {
+    img {
+      width: 100%;
+    }
   }
 
   .right {
@@ -365,6 +421,11 @@ a {
     .store_icon {
       width: 10rem;
       height: 3rem;
+      
+      @media screen and (max-width: 400px) {
+        width: 6rem;
+        height: 2rem;
+      }
     }
   }
 }
@@ -744,13 +805,30 @@ form {
 // Responsiveness
 
 @media screen and (max-width: 1000px) {
-  .app__navbar-links,
-  .app__navbar-socials {
-      display: none;
+  .app__navbar{
+    .app__navbar-links,
+    .app__navbar-auth {
+        display: none;
+    }
+  
   }
-
+  
   .app__navbar-smallscreen {
       display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .app__interest {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    .right {
+    align-items: center;
+    justify-content: center;
+    }
   }
 }
 
