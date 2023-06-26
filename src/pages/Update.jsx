@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const Update = () => {
   // State variables for form input fields
@@ -14,6 +15,13 @@ const Update = () => {
     setFirstName('');
     setLastName('');
     setEmail('');
+  };
+
+  const navigate = useNavigate()
+
+  const handleUpdate = () => {
+    alert("Account Details Updated")
+    navigate("/")
   };
 
   return (
@@ -50,7 +58,7 @@ const Update = () => {
             required
           />
         </div>
-        <button type="submit">Update</button>
+        <button onClick={handleUpdate} type="submit">Update</button>
       </form>
     </div>
   );

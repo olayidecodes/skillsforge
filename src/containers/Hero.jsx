@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="app__hero">
         <div className="hero__part hero__left">
-        <h1>More payment option better than cash</h1>
+        <h1>Your Financial Future In Good Hands</h1>
         <span>With a SKILLSFORGE you can access the more than 240 million customers out there, as well as offering management tools, options, and payment methods.</span>
         <div className="hero__store">
             <Link to="www.googleplay.com"><img className='store_icon' src={images.google_play} alt="Google Play" /></Link>

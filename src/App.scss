@@ -764,15 +764,16 @@ form {
   align-items: center;
   justify-content: center;
   color: var(--light-gray);
+
+  @media screen and (max-width: 500px) {
+    align-items: flex-start;
+  }
 }
 
 h1 {
   margin-bottom: 2rem;
 }
 
-.account_menu {
-  margin-bottom: 20px;
-}
 
 .account_menu {
   list-style: none;
@@ -781,6 +782,10 @@ h1 {
   gap: 2rem;
   text-align: center;
 
+  @media screen and (max-width: 500px) {
+    text-align: left;
+    justify-content: flex-start;
+  }
   li {
     a {
       text-decoration: none;

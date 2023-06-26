@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RiMenu4Line, RiCloseFill } from 'react-icons/ri';
+import { RiMenu4Line} from 'react-icons/ri';
 import {Link} from 'react-router-dom'
 
 const Navbar = () => {
@@ -29,13 +29,13 @@ const Navbar = () => {
         {toggleMenu && (
           <div className="app__navbar-smallscreen_overlay slide-bottom">
             <ul className="app__navbar-smallscreen-links">
-                <li><Link to='/send'>Send</Link></li>
-                <li><Link to="/receive">Receive</Link></li>
-                <li><Link to='/user'>Account</Link></li>
+                <li onClick={() => setToggleMenu(!toggleMenu)}><Link to='/send'>Send</Link></li>
+                <li onClick={() => setToggleMenu(!toggleMenu)}><Link to="/receive">Receive</Link></li>
+                <li onClick={() => setToggleMenu(!toggleMenu)}><Link to='/user'>Account</Link></li>
             </ul>
             <div className="overlay_auth">
-                <button><Link to='/register'>Register</Link></button>
-                <button><Link to='/login'>Login</Link></button>
+                <button onClick={() => setToggleMenu(!toggleMenu)}><Link to='/register'>Register</Link></button>
+                <button onClick={() => setToggleMenu(!toggleMenu)}><Link to='/login'>Login</Link></button>
               </div>
           </div>
         )}
